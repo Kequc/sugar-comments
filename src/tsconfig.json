@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "outFile": "../build/sugar-comments.js",
+        "declaration": true,
+        "target": "es5"
+    }
+}
