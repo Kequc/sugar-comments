@@ -14,11 +14,11 @@ module.exports = (dbs, opt) =>
   });
   
   router.get('/:id', (req, res) => {
-    db.doc.read(req.params['id'], (err, comment) => {
+    db.design.view('base', 'container', { key: req.params['id'] }, (err, output) => {
       if (err)
         res.status(500).json({ status: 'error', name: err.name, message: err.message });
       else
-        res.json(comment.body);
+        res.json(output.rows);
     });
   });
   

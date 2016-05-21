@@ -1,0 +1,7 @@
+{
+  "base": {
+    "views": {
+      "container": "function (doc) { if (doc.containerId) { emit(doc.containerId, doc); } }"
+    }
+  }
+}
