@@ -15,7 +15,8 @@
     "deploy": "cf push kequc",
     "watch": "tsc -w -p ./src",
     "build": "tsc -p ./src",
-    "build:css": "lessc --autoprefix=\"> 5%\" -x ./less/style.less ./public/stylesheets/style.css",
+    "postbuild": "uglifyjs ./build/sugar-comments.js -m -c -o ./public/javascripts/sugar-comments.js",
+    "build:css": "lessc --autoprefix=\"> 5%\" -x ./less/style.less ./public/stylesheets/sugar-comments.css",
     "build:all": "npm run build && npm run build:css"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
   "devDependencies": {
     "less": "^2.7.1",
     "less-plugin-autoprefix": "^1.5.1",
-    "typescript": "^1.8.10"
+    "typescript": "^1.8.10",
+    "uglify-js": "^2.6.2"
   }
 }

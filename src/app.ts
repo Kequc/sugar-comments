@@ -1,7 +1,7 @@
 namespace SugarComments
 {
   export var containers: Container[] = [];
-   
+  
   function _init ()
   {
     let elements = document.querySelectorAll('.sugar-comments');
